@@ -14,7 +14,6 @@ var ReactDom = require( 'react-dom' ),
  * Internal dependencies
  */
 var actions = require( 'lib/posts/actions' ),
-	PreferencesData = require( 'components/data/preferences-data' ),
 	PostEditor = require( './post-editor' ),
 	route = require( 'lib/route' ),
 	i18n = require( 'lib/mixins/i18n' ),
@@ -52,12 +51,10 @@ function renderEditor( context, postType ) {
 	ReactDom.unmountComponentAtNode( document.getElementById( 'secondary' ) );
 	ReactDom.render(
 		React.createElement( ReduxProvider, { store: context.store },
-			React.createElement( PreferencesData, null,
-				React.createElement( PostEditor, {
-					sites: sites,
-					type: postType
-				} )
-			)
+			React.createElement( PostEditor, {
+				sites: sites,
+				type: postType
+			} )
 		),
 		document.getElementById( 'primary' )
 	);
