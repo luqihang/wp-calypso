@@ -15,10 +15,10 @@
       "version": "1.2.2"
     },
     "acorn-globals": {
-      "version": "1.0.9",
+      "version": "3.0.0",
       "dependencies": {
         "acorn": {
-          "version": "2.7.0"
+          "version": "3.1.0"
         }
       }
     },
@@ -403,7 +403,7 @@
       }
     },
     "caniuse-db": {
-      "version": "1.0.30000471"
+      "version": "1.0.30000474"
     },
     "caseless": {
       "version": "0.11.0"
@@ -457,7 +457,7 @@
       "version": "1.1.1"
     },
     "clean-css": {
-      "version": "3.4.16",
+      "version": "3.4.17",
       "dependencies": {
         "commander": {
           "version": "2.8.1"
@@ -670,6 +670,9 @@
     "cssstyle": {
       "version": "0.2.36"
     },
+    "currently-unhandled": {
+      "version": "0.4.1"
+    },
     "d": {
       "version": "0.1.1"
     },
@@ -784,6 +787,9 @@
     "doctypes": {
       "version": "1.0.0"
     },
+    "dom-helpers": {
+      "version": "2.4.0"
+    },
     "dom-scroll-into-view": {
       "version": "1.0.1"
     },
@@ -897,19 +903,24 @@
       "version": "1.1.1"
     },
     "es5-ext": {
-      "version": "0.10.11"
+      "version": "0.10.11",
+      "dependencies": {
+        "es6-symbol": {
+          "version": "3.0.2"
+        }
+      }
     },
     "es6-iterator": {
       "version": "2.0.0"
     },
     "es6-map": {
-      "version": "0.1.3"
+      "version": "0.1.4"
     },
     "es6-set": {
       "version": "0.1.4"
     },
     "es6-symbol": {
-      "version": "3.0.2"
+      "version": "3.1.0"
     },
     "es6-templates": {
       "version": "0.2.2",
@@ -1766,6 +1777,9 @@
       "dependencies": {
         "acorn": {
           "version": "2.7.0"
+        },
+        "acorn-globals": {
+          "version": "1.0.9"
         }
       }
     },
@@ -1998,7 +2012,7 @@
       "version": "1.2.0"
     },
     "loud-rejection": {
-      "version": "1.3.0"
+      "version": "1.4.1"
     },
     "lower-case": {
       "version": "1.1.3"
@@ -2559,6 +2573,9 @@
     "react-addons-linked-state-mixin": {
       "version": "0.14.3"
     },
+    "react-addons-shallow-compare": {
+      "version": "0.14.3"
+    },
     "react-addons-test-utils": {
       "version": "0.14.3"
     },
@@ -2618,6 +2635,20 @@
         },
         "fbjs": {
           "version": "0.2.1"
+        }
+      }
+    },
+    "react-virtualized": {
+      "version": "7.2.0",
+      "dependencies": {
+        "classnames": {
+          "version": "2.2.5"
+        },
+        "performance-now": {
+          "version": "0.2.0"
+        },
+        "raf": {
+          "version": "3.2.0"
         }
       }
     },
@@ -3410,13 +3441,18 @@
       "version": "0.6.5"
     },
     "which": {
-      "version": "1.2.9"
+      "version": "1.2.10"
     },
     "window-size": {
       "version": "0.1.4"
     },
     "with": {
-      "version": "5.0.0"
+      "version": "5.1.1",
+      "dependencies": {
+        "acorn": {
+          "version": "3.1.0"
+        }
+      }
     },
     "within-document": {
       "version": "0.0.1"
