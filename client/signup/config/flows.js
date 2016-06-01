@@ -249,10 +249,6 @@ function filterFlowName( flowName ) {
 		return 'free-trial';
 	}
 
-	if ( includes( defaultFlows, flowName ) && abtest( 'personalPlan' ) === 'show' ) {
-		return 'personal';
-	}
-
 	return flowName;
 }
 
