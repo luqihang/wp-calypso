@@ -154,6 +154,12 @@ module.exports = React.createClass( {
 
 	goToNextStep( isPurchasingItem ) {
 		if ( domainsWithPlansOnlyTestEnabled && isPurchasingItem && abtest( 'freeTrialsInSignup' ) !== 'enabled' ) {
+			if ( abtest( 'personalPlan' ) === 'show' ) {
+				//show plans so the user can choose a paid plan
+				this.props.goToNextStep();
+				return;
+			}
+
 			const plansIndex = this.props.steps.indexOf( 'plans' );
 			if ( ! this.props.meta.skipBundlingPlan ) {
 				this.submitPlansStepWithPremium();
