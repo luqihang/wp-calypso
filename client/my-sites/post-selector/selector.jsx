@@ -74,8 +74,10 @@ const PostSelectorPosts = React.createClass( {
 	},
 
 	componentWillMount() {
+		this.itemHeights = {};
 		this.hasPerformedSearch = false;
 
+		this.queueRecomputeRowHeights = debounce( this.recomputeRowHeights );
 		this.debouncedSearch = debounce( () => {
 			this.props.onSearch( this.state.searchTerm );
 		}, SEARCH_DEBOUNCE_TIME_MS );
@@ -92,12 +94,29 @@ const PostSelectorPosts = React.createClass( {
 		}
 	},
 
+	recomputeRowHeights: function() {
+		if ( ! this.refs.loader ) {
+			return;
+		}
+
+		this.refs.loader._registeredChild.recomputeRowHeights();
+	},
+
 	setSelectorRef( selectorRef ) {
 		if ( ! selectorRef ) {
 			return;
 		}
 
 		this.setState( { selectorRef } );
+	},
+
+	setItemRef( item, itemRef ) {
+		if ( ! itemRef || ! item ) {
+			return;
+		}
+
+		this.itemHeights[ item.global_ID ] = itemRef.clientHeight;
+		this.queueRecomputeRowHeights();
 	},
 
 	hasNoSearchResults() {
@@ -137,6 +156,10 @@ const PostSelectorPosts = React.createClass( {
 	},
 
 	getItemHeight( item ) {
+		if ( item && this.itemHeights[ item.global_ID ] ) {
+			return this.itemHeights[ item.global_ID ];
+		}
+
 		let height = ITEM_HEIGHT;
 
 		if ( item && item.items ) {
@@ -203,10 +226,14 @@ const PostSelectorPosts = React.createClass( {
 	},
 
 	renderItem( item ) {
-		const onChange = () => this.props.onChange( item, ...arguments );
+		const onChange = ( ...args ) => this.props.onChange( item, ...args );
+		const setItemRef = ( ...args ) => this.setItemRef( item, ...args );
 
 		return (
-			<div key={ item.global_ID } className="post-selector__list-item">
+			<div
+				key={ item.global_ID }
+				ref={ setItemRef }
+				className="post-selector__list-item">
 				<label>
 					<input
 						name="posts"
