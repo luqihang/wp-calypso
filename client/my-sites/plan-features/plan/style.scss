@@ -1,0 +1,110 @@
+.plan-features-header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 12px 24px 12px 12px;
+	border-bottom: solid 2px lighten( $gray, 20% );
+	background-color: $white;
+}
+
+.plan-features-header__figure {
+	position: relative;
+	width: 70px;
+	height: 70px;
+	margin-right: 12px;
+	border: solid 6px $gray-light;
+	border-radius: 50%;
+	background-size: cover;
+
+	&.is-free {
+		background-image: url( '/calypso/images/plans/plan-beginner.svg' );
+	}
+
+	&.is-premium {
+		background-image: url( '/calypso/images/plans/plan-premium.svg' );
+	}
+
+	&.is-business {
+		background-image: url( '/calypso/images/plans/plan-business.svg' );
+	}
+}
+
+.plan-features-header__checkmark {
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(25%, -25%);
+	fill: $alert-green;
+}
+
+.plan-features-header__text {
+	flex: 1;
+	padding: 6px 0;
+}
+
+.plan-features-header__title,
+.plan-features-header__price,
+.plan-features-header__timeframe {
+	line-height: 1;
+	margin: 0;
+}
+
+.plan-features-header__title {
+	font-size: 18px;
+	color: $blue-wordpress;
+}
+
+.plan-features-header__price {
+	margin: 8px 0;
+	font-size: 24px;
+}
+
+.plan-features-header__currency-symbol,
+.plan-features-header__cents{
+	vertical-align: super;
+	font-size: 12px;
+}
+
+.plan-features-header__currency-symbol {
+	color: $gray;
+}
+
+.plan-features-header__dollars,
+.plan-features-header__cents {
+	color: $gray-dark;
+}
+
+.plan-features-header__dollars {
+	margin: 0 3px;
+	font-weight: 400;
+}
+
+.plan-features-header__cents {
+	font-weight: 500;
+}
+
+.plan-features-header__timeframe {
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 400;
+	color: $gray;
+}
+
+.plan-features-header__banner {
+	box-sizing: border-box;
+	position: absolute;
+	left: -1px;
+	right: -1px;
+	top: 0;
+	transform: translateY( calc( -100% - 1px ) );
+	padding: 0 8px;
+	background: $gray-dark;
+	font-size: 10px;
+	line-height: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	color: $white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
